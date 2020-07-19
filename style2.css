@@ -1,0 +1,562 @@
+html, body {
+  font-family: sans-serif;
+  font-size: 16px;
+  width: 100vw;
+  margin: 0;
+  padding: 25px 0 0 0;
+  height: 100%;
+  /*background-color: #595959;*/
+  position: relative;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+  color: white;
+}
+
+/* NAVIGATION */
+#topnNav {
+  background-color: rgba(0,0,0,0.75);
+  padding: 8px;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+#topnNav li {
+  display: inline;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1rem;
+  padding: 8px;
+  float: right;
+  z-index: 5;
+}
+
+#topnNav ul li {
+  list-style-type: none;
+  display: inline;
+  z-index: 5;
+}
+
+#topnNav a {
+  text-decoration: none;
+  padding: 8px;
+  color: white;
+  z-index: 5;
+}
+
+#topnNav a:hover {
+  background-color: white;
+  color: black;
+  z-index: 5;
+}
+
+#topnNav #selected {
+  border: 1px solid white;
+}
+/* navigation */
+
+/* MID PAGE TABS */
+.hero {
+  width: 80%;
+  height: 80vw;
+  position: relative;
+  margin: 50px auto;
+  overflow-x: hidden; /* all tabs are hidden to the R using this and translateX()*/
+}
+
+.btn-box {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.btn-box button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  margin-right: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn-box .fa {
+  margin-right: 20px;
+}
+
+.btn-box button:hover .fa {
+  color: #f12020;
+}
+
+.content {
+  justify-content: center;
+  margin: 5% auto;
+  position: absolute;
+  transform: translateX(150%); /* all tabs are hidden to R */
+}
+
+.content a {
+  width: 150px;
+  display: block;
+  padding: 8px 5px;
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: #f12020;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content a:hover {
+  color: black;
+}
+
+#roof-insp {
+  transform: translateX(0);
+}
+
+.overlay {
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  height: 200px;
+  justify-content: center;
+  align-content:center;
+  position: relative;
+}
+
+.overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+#insp1 {
+  background-image: url(../media/roof.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 200px;
+  margin: 20px;
+}
+
+#insp2 {
+  background-image: url(../media/real-estate.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 200px;
+}
+
+#insp3 {
+  background-image: url(../media/residential.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 200px;
+}
+
+#insp4 {
+  background-image: url(../media/commercial.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 200px;
+}
+
+#insp1::after, #insp2::after, #insp3::after, #insp4::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+/* mid page tabs */
+
+/* BACKGROUND VIDEO */
+#backVid {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backVid video {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  font-family: 'object-fit: cover';
+}
+
+#backVid .caption {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+}
+
+/*ipad width*/
+@media screen and (min-width: 768px){
+  #topnNav li {
+    font-size: 1rem;
+  }
+}
+
+/*ipad pro width*/
+@media screen and (min-width: 992px){
+  #topnNav li {
+    font-size: 1rem;
+  }
+}
+
+/*desktops width*/
+@media screen and (min-width: 1200px){
+  #topnNav li {
+    font-size: 1rem;
+  }
+}
+/* // background vid */
+
+/* PAGE WRAPPER */
+.page-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+.page-wrapper p, .page-wrapper ul, .page-wrapper li {
+  margin: 20px;
+  font-size: 1.25rem;
+  line-height: normal;
+}
+ .content-wrapper {
+   /* padding-bottom: 400px; /* footer height  <-- not sure if I need this... */
+ }
+
+.page-content {
+  height: auto;
+  margin: 50px 0 20px 0;
+}
+
+/* h1 at top of every page */
+#page-header {
+  width: 100%;
+  height: auto;
+}
+
+#page-header h3 {
+  font-size: 2rem;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 15%;
+  line-height: 3rem;
+}
+
+#header-font {
+  font-family: quango, sans-serif;
+  font-size: 3rem;
+  padding-top: 10%;
+}
+
+/* // page wrapper */
+
+/* Contact Form from tutorial https://www.youtube.com/watch?v=WY4rvU4ImgE - need to make js work */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 350px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px rgba(163,20,20,1);
+}
+
+.wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
+}
+
+.wrapper .input_field {
+  margin-bottom: 10px;
+}
+
+.wrapper .input_field input[type="text"],
+.wrapper textarea {
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 10px;
+}
+
+.wrapper textarea {
+  resize: none;
+  height: 80px;
+}
+
+.wrapper .btn input[type="submit"]{
+  border: 0px;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background: #f12020; /* this will change the button color */
+  color: #332902; /* this will change the button text color */
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+/* contact us */
+
+/* SPECIFICS FOR EACH PAGE */
+.contact-us {
+  background-color: #595959;
+}
+
+#airperture-words {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#airperture-logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#airperture-slogan {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#error_message{
+  margin-bottom: 20px;
+  background: #f12020; /* error background message will be red */
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+/* // contact form */
+
+/* FOOTER */
+.content1{
+  position: relative;
+  margin: 130px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.content1 .text{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #202020;
+}
+.content1 .p{
+  font-size: 2.1875rem;
+  font-weight: 600;
+  color: #202020;
+}
+footer{
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  background: #111;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #d9d9d9;
+}
+.main-footer-content{
+  display: flex;
+}
+.main-footer-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .footer-content{
+  margin: 20px 0 0 0;
+  position: relative;
+  line-height: 1.3rem;
+}
+.box .footer-content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+}
+.box .footer-content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: #f12020;
+  top: -10px;
+}
+.left .footer-content p{
+  text-align: justify;
+}
+.left .footer-content .social{
+  margin: 20px 0 0 0;
+}
+.left .footer-content .social a{
+  padding: 0 2px;
+}
+.left .footer-content .social a span{
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+  color: #d9d9d9;
+}
+.left .footer-content .social a span:hover{
+  background: #f12020;
+}
+.center .footer-content .fas{
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .footer-content .fas:hover{
+  background: #f12020;
+}
+.center .footer-content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .footer-content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form #msgForm{
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #151515;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+.right form input:focus,
+.right form #msgForm:focus{
+  outline-color: #3498db;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #f12020;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: #000;
+}
+.bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+}
+.bottom center span{
+  color: #656565;
+}
+.bottom center a{
+  color: #f12020;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+@media screen and (max-width: 900px) {
+  footer{
+    position: relative;
+    bottom: 0px;
+  }
+  .main-footer-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-footer-content .box{
+    margin: 5px 0;
+  }
+}
+/* // footer */
